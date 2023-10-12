@@ -54,14 +54,46 @@
 		67DB929D2AD2F9B100497B80 /* GIFKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				67DB929E2AD2F9B100497B80 /* AppDelegate.swift */,
-				67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */,
-				67DB92A22AD2F9B100497B80 /* MainViewController.swift */,
-				67DB92A72AD2F9B200497B80 /* Assets.xcassets */,
-				67DB92A92AD2F9B200497B80 /* LaunchScreen.storyboard */,
-				67DB92AC2AD2F9B200497B80 /* Info.plist */,
+				F3AA84302AD7DBB70062CE7E /* Sources */,
+				F3AA84322AD7DBDB0062CE7E /* Resources */,
 			);
 			path = GIFKeeper;
+			sourceTree = "<group>";
+		};
+		F3AA842F2AD7DB8C0062CE7E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				67DB929E2AD2F9B100497B80 /* AppDelegate.swift */,
+				67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F3AA84302AD7DBB70062CE7E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA842F2AD7DB8C0062CE7E /* App */,
+				67DB92A22AD2F9B100497B80 /* MainViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F3AA84312AD7DBCC0062CE7E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				67DB92AC2AD2F9B200497B80 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		F3AA84322AD7DBDB0062CE7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				67DB92A72AD2F9B200497B80 /* Assets.xcassets */,
+				67DB92A92AD2F9B200497B80 /* LaunchScreen.storyboard */,
+				F3AA84312AD7DBCC0062CE7E /* Configuration */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +313,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD3BV5S34P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GIFCollection/Info.plist;
+				INFOPLIST_FILE = GIFKeeper/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -308,7 +340,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD3BV5S34P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GIFCollection/Info.plist;
+				INFOPLIST_FILE = GIFKeeper/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
