@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		671805AF2ADD87E9001650FC /* CustomLabelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805AE2ADD87E9001650FC /* CustomLabelDetailViewController.swift */; };
+		671805B12ADD8961001650FC /* CustomTextFieldDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805B02ADD8961001650FC /* CustomTextFieldDetailViewController.swift */; };
+		671805B32ADD8C7D001650FC /* CustomStackViewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805B22ADD8C7D001650FC /* CustomStackViewDetailViewController.swift */; };
+		67C707082AD9A76A009EF2C1 /* DetailGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */; };
+		67C7070B2AD9D653009EF2C1 /* CustomButtonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C7070A2AD9D653009EF2C1 /* CustomButtonDetailViewController.swift */; };
 		67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB929E2AD2F9B100497B80 /* AppDelegate.swift */; };
 		67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */; };
 		67DB92A82AD2F9B200497B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67DB92A72AD2F9B200497B80 /* Assets.xcassets */; };
@@ -14,9 +19,16 @@
 		F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84332AD7E1B60062CE7E /* TabBarController.swift */; };
 		F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */; };
 		F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84382AD7E3700062CE7E /* SearchViewController.swift */; };
+		F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */; };
+		F3AA84422AD81AB00062CE7E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3AA84412AD81AB00062CE7E /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		671805AE2ADD87E9001650FC /* CustomLabelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelDetailViewController.swift; sourceTree = "<group>"; };
+		671805B02ADD8961001650FC /* CustomTextFieldDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldDetailViewController.swift; sourceTree = "<group>"; };
+		671805B22ADD8C7D001650FC /* CustomStackViewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackViewDetailViewController.swift; sourceTree = "<group>"; };
+		67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGifViewController.swift; sourceTree = "<group>"; };
+		67C7070A2AD9D653009EF2C1 /* CustomButtonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonDetailViewController.swift; sourceTree = "<group>"; };
 		67DB929B2AD2F9B100497B80 /* GIFKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DB929E2AD2F9B100497B80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +38,7 @@
 		F3AA84332AD7E1B60062CE7E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifGroupsViewController.swift; sourceTree = "<group>"; };
 		F3AA84382AD7E3700062CE7E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCoverCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +46,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AA84422AD81AB00062CE7E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		671805B42ADD9C41001650FC /* CustomsUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				67C7070A2AD9D653009EF2C1 /* CustomButtonDetailViewController.swift */,
+				671805AE2ADD87E9001650FC /* CustomLabelDetailViewController.swift */,
+				671805B22ADD8C7D001650FC /* CustomStackViewDetailViewController.swift */,
+				671805B02ADD8961001650FC /* CustomTextFieldDetailViewController.swift */,
+			);
+			path = CustomsUIElements;
+			sourceTree = "<group>";
+		};
+		67C707062AD9A736009EF2C1 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				671805B42ADD9C41001650FC /* CustomsUIElements */,
+				67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
 		67DB92922AD2F9B100497B80 = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +146,36 @@
 		F3AA843A2AD7E3AF0062CE7E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */,
-				F3AA84382AD7E3700062CE7E /* SearchViewController.swift */,
+				67C707062AD9A736009EF2C1 /* DetailVC */,
+				F3AA843B2AD802300062CE7E /* GroupsVC */,
+				F3AA843C2AD802430062CE7E /* SearchVC */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3AA843B2AD802300062CE7E /* GroupsVC */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */,
+			);
+			path = GroupsVC;
+			sourceTree = "<group>";
+		};
+		F3AA843C2AD802430062CE7E /* SearchVC */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA843F2AD806FD0062CE7E /* Cell */,
+				F3AA84382AD7E3700062CE7E /* SearchViewController.swift */,
+			);
+			path = SearchVC;
+			sourceTree = "<group>";
+		};
+		F3AA843F2AD806FD0062CE7E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +194,9 @@
 			dependencies = (
 			);
 			name = GIFKeeper;
+			packageProductDependencies = (
+				F3AA84412AD81AB00062CE7E /* SnapKit */,
+			);
 			productName = GIFCollection;
 			productReference = 67DB929B2AD2F9B100497B80 /* GIFKeeper.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +225,9 @@
 				Base,
 			);
 			mainGroup = 67DB92922AD2F9B100497B80;
+			packageReferences = (
+				F3AA84402AD81AB00062CE7E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 67DB929C2AD2F9B100497B80 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,9 +256,15 @@
 			files = (
 				F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */,
 				F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */,
+				67C707082AD9A76A009EF2C1 /* DetailGifViewController.swift in Sources */,
+				F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */,
 				F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */,
 				67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */,
 				67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */,
+				671805B32ADD8C7D001650FC /* CustomStackViewDetailViewController.swift in Sources */,
+				671805AF2ADD87E9001650FC /* CustomLabelDetailViewController.swift in Sources */,
+				671805B12ADD8961001650FC /* CustomTextFieldDetailViewController.swift in Sources */,
+				67C7070B2AD9D653009EF2C1 /* CustomButtonDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +476,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3AA84402AD81AB00062CE7E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3AA84412AD81AB00062CE7E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3AA84402AD81AB00062CE7E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 67DB92932AD2F9B100497B80 /* Project object */;
 }
