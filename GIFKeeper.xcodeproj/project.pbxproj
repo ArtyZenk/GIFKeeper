@@ -16,6 +16,7 @@
 		F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84382AD7E3700062CE7E /* SearchViewController.swift */; };
 		F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */; };
 		F3AA84422AD81AB00062CE7E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3AA84412AD81AB00062CE7E /* SnapKit */; };
+		F3FC89392AD9AA1A00C5E322 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC89382AD9AA1A00C5E322 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifGroupsViewController.swift; sourceTree = "<group>"; };
 		F3AA84382AD7E3700062CE7E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCoverCell.swift; sourceTree = "<group>"; };
+		F3FC89382AD9AA1A00C5E322 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		F3AA843A2AD7E3AF0062CE7E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F3FC89372AD9A7BA00C5E322 /* LoginVC */,
 				F3AA843B2AD802300062CE7E /* GroupsVC */,
 				F3AA843C2AD802430062CE7E /* SearchVC */,
 			);
@@ -145,6 +148,14 @@
 				F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F3FC89372AD9A7BA00C5E322 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				F3FC89382AD9AA1A00C5E322 /* LoginViewController.swift */,
+			);
+			path = LoginVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3FC89392AD9AA1A00C5E322 /* LoginViewController.swift in Sources */,
 				F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */,
 				F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */,
 				F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */,
