@@ -34,16 +34,16 @@ class DetailGifViewController: UIViewController {
         return stackView
     }()
     
-    private var nameStackView = CustomStackViewDetailViewController()
-    private var nameLabel = CustomLabelDetailViewController(text: "Name")
-    private var nameTextField = CustomTextFieldDetailViewController()
+    private var nameStackView = CustomStackView()
+    private var nameLabel = CustomLabel(textForLabel: "Name")
+    private var nameTextField = CustomTextField()
    
-    private var tagsStackView = CustomStackViewDetailViewController()
-    private var tagsLabel = CustomLabelDetailViewController(text: "Tags")
-    private var tagsTextField = CustomTextFieldDetailViewController()
+    private var tagsStackView = CustomStackView()
+    private var tagsLabel = CustomLabel(textForLabel: "Tags")
+    private var tagsTextField = CustomTextField()
     
-    private var descriptionStackView = CustomStackViewDetailViewController()
-    private var descriptionLabel = CustomLabelDetailViewController(text: "Description")
+    private var descriptionStackView = CustomStackView()
+    private var descriptionLabel = CustomLabel(textForLabel: "Description")
     private var descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.font = .systemFont(ofSize: Constants.appFontSize)
@@ -55,8 +55,8 @@ class DetailGifViewController: UIViewController {
         return textView
     }()
     
-    private var groupsStackView = CustomStackViewDetailViewController()
-    private var groupsLabel = CustomLabelDetailViewController(text: "Groups")
+    private var groupsStackView = CustomStackView()
+    private var groupsLabel = CustomLabel(textForLabel: "Groups")
     private var groupsTextField: UILabel = {
         let label = UILabel()
         label.numberOfLines = Constants.numberOfLinesTextView
@@ -67,13 +67,13 @@ class DetailGifViewController: UIViewController {
     }()
     
     private var editGroupsButton: UIButton = {
-        let button = CustomButtonDetailViewController(text: "Edit groups")
+        let button = CustomButton(titleForButton: "Edit groups")
         //         button.addTarget(nil, action: #selector(MainViewController.locationButtonTapped), for: .touchUpInside)
         return button
     }()
 
     private var deleteButton: UIButton = {
-        let button = CustomButtonDetailViewController(text: "Delete")
+        let button = CustomButton(titleForButton: "Delete")
         //         button.addTarget(nil, action: #selector(MainViewController.locationButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -291,13 +291,4 @@ private enum Constants {
     static let heightImageView = 2.0 / 3.0
     static let doubleMultiplier = 2
     static let offsetUIElements: CGFloat = 8
-}
-
-extension UIColor {
-    static func appMainColor() -> UIColor {
-        UIColor(red: 58 / 255,
-                green: 163 / 255,
-                blue: 144 / 255,
-                alpha: 1)
-    }
 }

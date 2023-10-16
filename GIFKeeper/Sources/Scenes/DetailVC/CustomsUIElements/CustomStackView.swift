@@ -1,5 +1,5 @@
 //
-//  CustomStackViewDetailViewController.swift
+//  CustomStackView.swift
 //  GIFKeeper
 //
 //  Created by Sonata Girl on 16.10.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomStackViewDetailViewController: UIStackView {
+final class CustomStackView: UIStackView {
     
     init() {
         super.init(frame: .zero)

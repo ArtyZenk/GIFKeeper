@@ -1,5 +1,5 @@
 //
-//  CustomLabelDetailViewController.swift
+//  CustomLabel.swift
 //  GIFKeeper
 //
 //  Created by Sonata Girl on 16.10.2023.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class CustomLabelDetailViewController: UILabel {
-    private var title: String = ""
+final class CustomLabel: UILabel {
+    private var textLabel = ""
     
-    init(text: String) {
+    init(textForLabel: String) {
         super.init(frame: .zero)
-        self.title = text
+        self.textLabel = textForLabel
         setupLabelProperties()
     }
     
@@ -21,7 +21,7 @@ final class CustomLabelDetailViewController: UILabel {
     }
     
     func setupLabelProperties() {
-        text = title
+        text = textLabel
         font = UIFont.systemFont(ofSize: 20)
     }
 }

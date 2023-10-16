@@ -1,5 +1,5 @@
 //
-//  CustomTextFieldDetailViewController.swift
+//  CustomTextField.swift
 //  GIFKeeper
 //
 //  Created by Sonata Girl on 16.10.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomTextFieldDetailViewController: UITextField {
+final class CustomTextField: UITextField {
     
     init() {
         super.init(frame: .zero)

@@ -1,5 +1,5 @@
 //
-//  CustomUIElements.swift
+//  CustomButton.swift
 //  GIFKeeper
 //
 //  Created by Sonata Girl on 13.10.2023.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-final class CustomButtonDetailViewController: UIButton {
-    private var text = ""
+final class CustomButton: UIButton {
+    private var titleButton = ""
     
-    init(text: String) {
+    init(titleForButton: String) {
         super.init(frame: .zero)
-        self.text = text
-        
+        self.titleButton = titleForButton
         setupButtonProperties()
     }
     
@@ -22,8 +21,8 @@ final class CustomButtonDetailViewController: UIButton {
     }
     
     func setupButtonProperties() {
-        setTitle(text, for: .normal)
-        let color = text == "Delete" ? .red : UIColor.appMainColor()
+        setTitle(titleButton, for: .normal)
+        let color = titleButton == "Delete" ? .red : UIColor.appMainColor()
         setTitleColor(color, for: .normal)
         layer.cornerRadius = 18
         layer.borderWidth = 1
