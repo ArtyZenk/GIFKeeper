@@ -17,6 +17,9 @@
 		67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */; };
 		67DB92A82AD2F9B200497B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67DB92A72AD2F9B200497B80 /* Assets.xcassets */; };
 		67DB92AB2AD2F9B200497B80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67DB92A92AD2F9B200497B80 /* LaunchScreen.storyboard */; };
+		F3171C442AE16610002B694C /* FavoriteGifCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */; };
+		F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */; };
+		F3820B292AE147B700C83C3E /* FavoriteGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */; };
 		F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84332AD7E1B60062CE7E /* TabBarController.swift */; };
 		F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */; };
 		F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84382AD7E3700062CE7E /* SearchViewController.swift */; };
@@ -38,6 +41,9 @@
 		67DB92A72AD2F9B200497B80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67DB92AA2AD2F9B200497B80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67DB92AC2AD2F9B200497B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGifCoverCell.swift; sourceTree = "<group>"; };
+		F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHeader.swift; sourceTree = "<group>"; };
+		F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGroupsViewController.swift; sourceTree = "<group>"; };
 		F3AA84332AD7E1B60062CE7E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifGroupsViewController.swift; sourceTree = "<group>"; };
 		F3AA84382AD7E3700062CE7E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +116,32 @@
 			path = GIFKeeper;
 			sourceTree = "<group>";
 		};
+		F3171C452AE16619002B694C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F3171C462AE3A67C002B694C /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		F3820B272AE1473400C83C3E /* FavoritesVC */ = {
+			isa = PBXGroup;
+			children = (
+				F3171C462AE3A67C002B694C /* Header */,
+				F3171C452AE16619002B694C /* Cell */,
+				F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */,
+			);
+			path = FavoritesVC;
+			sourceTree = "<group>";
+		};
 		F3AA842F2AD7DB8C0062CE7E /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +195,7 @@
 				F3FC89372AD9A7BA00C5E322 /* LoginVC */,
 				F3AA843B2AD802300062CE7E /* GroupsVC */,
 				F3AA843C2AD802430062CE7E /* SearchVC */,
+				F3820B272AE1473400C83C3E /* FavoritesVC */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -280,10 +313,13 @@
 				F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */,
 				F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */,
 				67C707082AD9A76A009EF2C1 /* DetailGifViewController.swift in Sources */,
+				F3171C442AE16610002B694C /* FavoriteGifCoverCell.swift in Sources */,
 				F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */,
 				F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */,
 				67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */,
+				F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */,
 				67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */,
+				F3820B292AE147B700C83C3E /* FavoriteGroupsViewController.swift in Sources */,
 				6795E4002ADE6E3600520FE3 /* UIColor+Extensions.swift in Sources */,
 				671805B32ADD8C7D001650FC /* CustomStackView.swift in Sources */,
 				671805AF2ADD87E9001650FC /* CustomLabel.swift in Sources */,
