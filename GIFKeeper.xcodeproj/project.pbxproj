@@ -10,6 +10,11 @@
 		671805AF2ADD87E9001650FC /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805AE2ADD87E9001650FC /* CustomLabel.swift */; };
 		671805B12ADD8961001650FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805B02ADD8961001650FC /* CustomTextField.swift */; };
 		671805B32ADD8C7D001650FC /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805B22ADD8C7D001650FC /* CustomStackView.swift */; };
+		676C3C6A2AE31E6300D5795D /* AllGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C692AE31E6300D5795D /* AllGroupsViewController.swift */; };
+		676C3C6C2AE3265300D5795D /* GifWithTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C6B2AE3265300D5795D /* GifWithTextCell.swift */; };
+		676C3C702AE4195900D5795D /* GifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C6F2AE4195900D5795D /* GifModel.swift */; };
+		676C3C732AE4447B00D5795D /* SectionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C722AE4447B00D5795D /* SectionsHeader.swift */; };
+		676C3C752AE459D700D5795D /* GroupGifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C742AE459D700D5795D /* GroupGifCell.swift */; };
 		6795E4002ADE6E3600520FE3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6795E3FF2ADE6E3600520FE3 /* UIColor+Extensions.swift */; };
 		67C707082AD9A76A009EF2C1 /* DetailGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */; };
 		67C7070B2AD9D653009EF2C1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C7070A2AD9D653009EF2C1 /* CustomButton.swift */; };
@@ -32,6 +37,11 @@
 		671805AE2ADD87E9001650FC /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		671805B02ADD8961001650FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		671805B22ADD8C7D001650FC /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
+		676C3C692AE31E6300D5795D /* AllGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsViewController.swift; sourceTree = "<group>"; };
+		676C3C6B2AE3265300D5795D /* GifWithTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifWithTextCell.swift; sourceTree = "<group>"; };
+		676C3C6F2AE4195900D5795D /* GifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifModel.swift; sourceTree = "<group>"; };
+		676C3C722AE4447B00D5795D /* SectionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsHeader.swift; sourceTree = "<group>"; };
+		676C3C742AE459D700D5795D /* GroupGifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupGifCell.swift; sourceTree = "<group>"; };
 		6795E3FF2ADE6E3600520FE3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGifViewController.swift; sourceTree = "<group>"; };
 		67C7070A2AD9D653009EF2C1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -72,6 +82,41 @@
 				671805B02ADD8961001650FC /* CustomTextField.swift */,
 			);
 			path = CustomsUIElements;
+			sourceTree = "<group>";
+		};
+		676C3C682AE31E2600D5795D /* AllGroupsVC */ = {
+			isa = PBXGroup;
+			children = (
+				676C3C712AE4445B00D5795D /* Header */,
+				676C3C6D2AE327CE00D5795D /* Cell */,
+				676C3C692AE31E6300D5795D /* AllGroupsViewController.swift */,
+			);
+			path = AllGroupsVC;
+			sourceTree = "<group>";
+		};
+		676C3C6D2AE327CE00D5795D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				676C3C6B2AE3265300D5795D /* GifWithTextCell.swift */,
+				676C3C742AE459D700D5795D /* GroupGifCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		676C3C6E2AE4192200D5795D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				676C3C6F2AE4195900D5795D /* GifModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		676C3C712AE4445B00D5795D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				676C3C722AE4447B00D5795D /* SectionsHeader.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		6795E3FE2ADE6D2C00520FE3 /* Extensions */ = {
@@ -158,6 +203,7 @@
 				F3AA84352AD7E28E0062CE7E /* TabBar */,
 				F3AA843A2AD7E3AF0062CE7E /* Scenes */,
 				6795E3FE2ADE6D2C00520FE3 /* Extensions */,
+				676C3C6E2AE4192200D5795D /* Models */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -194,6 +240,7 @@
 				67C707062AD9A736009EF2C1 /* DetailVC */,
 				F3FC89372AD9A7BA00C5E322 /* LoginVC */,
 				F3AA843B2AD802300062CE7E /* GroupsVC */,
+				676C3C682AE31E2600D5795D /* AllGroupsVC */,
 				F3AA843C2AD802430062CE7E /* SearchVC */,
 				F3820B272AE1473400C83C3E /* FavoritesVC */,
 			);
@@ -309,13 +356,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				676C3C702AE4195900D5795D /* GifModel.swift in Sources */,
+				676C3C732AE4447B00D5795D /* SectionsHeader.swift in Sources */,
 				F3FC89392AD9AA1A00C5E322 /* LoginViewController.swift in Sources */,
 				F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */,
+				676C3C752AE459D700D5795D /* GroupGifCell.swift in Sources */,
 				F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */,
 				67C707082AD9A76A009EF2C1 /* DetailGifViewController.swift in Sources */,
 				F3171C442AE16610002B694C /* FavoriteGifCoverCell.swift in Sources */,
 				F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */,
 				F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */,
+				676C3C6A2AE31E6300D5795D /* AllGroupsViewController.swift in Sources */,
 				67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */,
 				F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */,
 				67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */,
@@ -325,6 +376,7 @@
 				671805AF2ADD87E9001650FC /* CustomLabel.swift in Sources */,
 				671805B12ADD8961001650FC /* CustomTextField.swift in Sources */,
 				67C7070B2AD9D653009EF2C1 /* CustomButton.swift in Sources */,
+				676C3C6C2AE3265300D5795D /* GifWithTextCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,8 +524,7 @@
 				INFOPLIST_FILE = GIFKeeper/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,8 +550,7 @@
 				INFOPLIST_FILE = GIFKeeper/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

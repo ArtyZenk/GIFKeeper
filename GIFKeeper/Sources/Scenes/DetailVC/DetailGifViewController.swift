@@ -10,7 +10,7 @@ import SnapKit
 
 class DetailGifViewController: UIViewController {
    
-    // MARK: - Adding UI Elements
+    // MARK: Adding UI Elements
     
     private var gifImageView: UIImageView = {
         let imageView = UIImageView()
@@ -78,7 +78,7 @@ class DetailGifViewController: UIViewController {
         return button
     }()
     
-    // MARK: - View controller lifecycle methods
+    // MARK: View controller lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +109,7 @@ extension DetailGifViewController {
     }
 }
 
-// MARK: - Setup hierarchy subviews
+// MARK: - Setup hierarchy
 
 private extension DetailGifViewController {
     func setupHierarchy() {
@@ -140,15 +140,15 @@ private extension DetailGifViewController {
     }
 }
 
-// MARK: - Setup layouts for UIElements
+// MARK: - Setup constraints
 
 private extension DetailGifViewController {
     func setupLayout() {
         gifAttributesScrollView.snp.makeConstraints {
             $0.top.equalTo(view)
-            $0.left.equalTo(view).offset(Constants.offsetTargetUIElements)
-            $0.right.equalTo(view).inset(Constants.insetTargetUIElements)
-            $0.bottom.equalTo(view).inset(Constants.insetTargetUIElements)
+            $0.left.equalTo(view).offset(Constants.offsetUIElements)
+            $0.right.equalTo(view).inset(Constants.insetUIElements)
+            $0.bottom.equalTo(view).inset(Constants.insetUIElements)
         }
         
         gifImageView.snp.makeConstraints { $0.height.equalTo(gifImageView.snp.width).multipliedBy(Constants.heightImageView) }
@@ -166,7 +166,7 @@ private extension DetailGifViewController {
     }
 }
 
-// MARK: - Configure view property
+// MARK: - Configure view
 
 private extension DetailGifViewController {
     func configureView() {
@@ -193,20 +193,27 @@ private extension DetailGifViewController {
 
 private extension DetailGifViewController {
     func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShowHide(_:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShowHide(_:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShowHide(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShowHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     @objc func keyboardWillShowHide(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
-              let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return }
-        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+              let animationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue 
+        else { return }
+        guard
+            let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        else { return }
         
         var heightYOffset: CGFloat = 0
         if notification.name == UIResponder.keyboardWillShowNotification {
@@ -228,8 +235,14 @@ private extension DetailGifViewController {
         gifAttributesScrollView.scrollIndicatorInsets = scrollViewContentInset
       
         if let firstResponderView = findFirstResponderView() {
-            let textViewFrame = firstResponderView.convert(firstResponderView.bounds, to: gifAttributesScrollView)
-            let visibleRect = gifAttributesScrollView.convert(gifAttributesScrollView.bounds, to: firstResponderView)
+            let textViewFrame = firstResponderView.convert(
+                firstResponderView.bounds,
+                to: gifAttributesScrollView
+            )
+            let visibleRect = gifAttributesScrollView.convert(
+                gifAttributesScrollView.bounds,
+                to: firstResponderView
+            )
             
             let shouldScrollToVisible = !(visibleRect.contains(textViewFrame))
             if shouldScrollToVisible {
@@ -284,11 +297,10 @@ private enum Constants {
     
     static let fontSizeNavBarTitle: CGFloat = 28
     
-    static let offsetTargetUIElements: ConstraintOffsetTarget = 8
-    static let insetTargetUIElements: ConstraintInsetTarget = 8
+    static let offsetUIElements: CGFloat = 8
+    static let insetUIElements = 8
     
     static let heightTextField = 30
     static let heightImageView = 2.0 / 3.0
     static let doubleMultiplier = 2
-    static let offsetUIElements: CGFloat = 8
 }
