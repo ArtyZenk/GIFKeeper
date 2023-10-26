@@ -73,7 +73,9 @@ private extension GifWithTextCell {
 extension GifWithTextCell {
     func configureCell(gifModel: GifModel) {
         gifName.text = gifModel.name
-        gifImage.image = UIImage(systemName: gifModel.imageName)
+        // FIXME: Temporary nil-coalising
+        #warning("Must change it")
+        gifImage.image = UIImage(systemName: gifModel.imageName ?? "")
     }
     
     override func prepareForReuse() {
