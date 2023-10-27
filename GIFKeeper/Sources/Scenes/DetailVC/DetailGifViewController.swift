@@ -66,15 +66,15 @@ class DetailGifViewController: UIViewController {
         return label
     }()
     
-    private var editGroupsButton: UIButton = {
+    private lazy var editGroupsButton: UIButton = {
         let button = CustomButton(titleForButton: "Edit groups")
-        //         button.addTarget(nil, action: #selector(MainViewController.locationButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(editGroupsButtonPressed), for: .touchUpInside)
         return button
     }()
 
-    private var deleteButton: UIButton = {
+    private lazy var deleteButton: UIButton = {
         let button = CustomButton(titleForButton: "Delete")
-        //         button.addTarget(nil, action: #selector(MainViewController.locationButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -88,6 +88,17 @@ class DetailGifViewController: UIViewController {
         configureView()
         addGestures()
         registerForKeyboardNotifications()
+    }
+    
+    // MARK: Private methods
+    
+    @objc private func editGroupsButtonPressed() {
+        let editGroupScreen = UINavigationController(rootViewController: EditGroupViewController())
+        present(editGroupScreen, animated: true)
+    }
+    
+    @objc private func deleteButtonPressed() {
+        showAlert(title: "Внимание!", message: "Вы действительно хотите удалить группу?")
     }
 }
 
@@ -276,6 +287,20 @@ extension DetailGifViewController: UITextViewDelegate {
             return false
         }
         return true
+    }
+}
+
+// MARK: - Alert methods
+
+private extension DetailGifViewController {
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Да", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Нет", style: .default)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 }
 

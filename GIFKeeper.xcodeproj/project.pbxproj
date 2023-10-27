@@ -24,6 +24,7 @@
 		67DB92AB2AD2F9B200497B80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67DB92A92AD2F9B200497B80 /* LaunchScreen.storyboard */; };
 		F3171C442AE16610002B694C /* FavoriteGifCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */; };
 		F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */; };
+		F329CDDE2AEA596600655333 /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329CDDD2AEA596600655333 /* EditGroupViewController.swift */; };
 		F3820B292AE147B700C83C3E /* FavoriteGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */; };
 		F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84332AD7E1B60062CE7E /* TabBarController.swift */; };
 		F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */; };
@@ -53,6 +54,7 @@
 		67DB92AC2AD2F9B200497B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGifCoverCell.swift; sourceTree = "<group>"; };
 		F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHeader.swift; sourceTree = "<group>"; };
+		F329CDDD2AEA596600655333 /* EditGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
 		F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGroupsViewController.swift; sourceTree = "<group>"; };
 		F3AA84332AD7E1B60062CE7E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifGroupsViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				671805B42ADD9C41001650FC /* CustomsUIElements */,
 				67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */,
+				F329CDDD2AEA596600655333 /* EditGroupViewController.swift */,
 			);
 			path = DetailVC;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				F3171C442AE16610002B694C /* FavoriteGifCoverCell.swift in Sources */,
 				F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */,
 				F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */,
+				F329CDDE2AEA596600655333 /* EditGroupViewController.swift in Sources */,
 				676C3C6A2AE31E6300D5795D /* AllGroupsViewController.swift in Sources */,
 				67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */,
 				F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */,
