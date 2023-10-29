@@ -46,11 +46,63 @@ final class GroupViewController: UIViewController {
 
 // MARK: - Configure Navigation bar
 
-extension GroupViewController {
-    private func configureNavigationBar() {
+private extension GroupViewController {
+    func configureNavigationBar() {
         navigationItem.title = Constants.navigationTitle
         navigationItem.searchController = searchController
+        
+        setupRightBarButtonItems()
     }
+}
+    
+// MARK: - Setup right items of NavBar
+
+private extension GroupViewController {
+
+    func setupRightBarButtonItems() {
+        var menuItems: [UIAction] = []
+        menuItems.append(UIAction(
+            title: "Rename group",
+            image: UIImage(systemName: "edit"),
+            handler: { _ in self.renameButtonPressed() }
+        ))
+        
+        menuItems.append(UIAction(
+            title: "Delete",
+            image: UIImage(systemName: "trash"),
+            attributes: .destructive,
+            handler: { _ in self.deleteButtonPressed() }
+        ))
+                
+        let editMenu = UIMenu(
+            title: "",
+            options: [],
+            children: menuItems
+        )
+        
+        let editButton = UIBarButtonItem(
+            systemItem: .edit,
+            primaryAction: .none,
+            menu: editMenu
+        )
+            
+        let favoriteButton = UIBarButtonItem(
+            image: UIImage(systemName: "heart"),
+            style: .plain,
+            target: self,
+            action: #selector(favoriteButtonPressed)
+        )
+        
+        navigationItem.rightBarButtonItems = [favoriteButton, editButton]
+    }
+           
+    // MARK: Navigation bar actions handling
+    
+    func renameButtonPressed() {}
+    
+    func deleteButtonPressed() {}
+    
+    @objc func favoriteButtonPressed() {}
 }
 
 // MARK: - Setup hierarchy
