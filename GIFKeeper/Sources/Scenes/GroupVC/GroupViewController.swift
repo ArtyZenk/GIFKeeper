@@ -144,6 +144,19 @@ extension GroupViewController: UICollectionViewDataSource {
 // MARK: - CollectionViewDelegate
 
 extension GroupViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+        UIContextMenuConfiguration(
+            previewProvider: nil
+            // TODO: Should create preview mode
+        ) { actions -> UIMenu in
+            let share = UIAction(title: "Отправить") { _ in }
+            let edit = UIAction(title: "Редактировать") { _ in }
+            let deleteFromGroup = UIAction(title: "Удалить из группы") { _ in }
+            let deleteFromMemory = UIAction(title: "Удалить из памяти", attributes: .destructive) { _ in }
+        
+            return UIMenu(children: [share, edit, deleteFromGroup, deleteFromMemory])
+        }
+    }
 }
 
 // MARK: - Collection layout methods
