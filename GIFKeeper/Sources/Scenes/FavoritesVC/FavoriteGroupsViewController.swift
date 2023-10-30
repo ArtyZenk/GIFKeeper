@@ -184,6 +184,63 @@ private extension FavoriteGroupsViewController {
     func setupNavigationBar() {
         navigationItem.title = Constants.navigationTitle
         navigationItem.searchController = searchController
+        
+        setupRightBarButtonItems()
+    }
+}
+
+// MARK: - Setup right items of NavBar
+
+private extension FavoriteGroupsViewController {
+    func setupRightBarButtonItems() {
+        let editButton = UIBarButtonItem(
+            image: UIImage(systemName: "text.justify"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        
+        let favoriteButton = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(showAddNewGroupForm)
+        )
+        
+        navigationItem.rightBarButtonItems = [favoriteButton, editButton]
+    }
+}
+
+// MARK: - Alert methods
+
+private extension FavoriteGroupsViewController {
+    @objc func showAddNewGroupForm() {
+        let alert = UIAlertController(
+            title: "Add new group",
+            message: nil ,
+            preferredStyle: .alert
+        )
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Enter name for group"
+            textField.clearButtonMode = .whileEditing
+        }
+        
+        let okAction = UIAlertAction(
+            title: "OK",
+            style: .default
+        ) { _ in
+            let _ = alert.textFields?.first
+            // TODO: Add action behaving
+        }
+        
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .destructive
+        ) { _ in }
+        
+        [okAction, cancelAction].forEach { alert.addAction($0) }
+        present(alert, animated: true)
     }
 }
 
