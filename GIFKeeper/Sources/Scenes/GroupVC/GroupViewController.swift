@@ -60,28 +60,21 @@ private extension GroupViewController {
 private extension GroupViewController {
 
     func setupRightBarButtonItems() {
-        var menuItems: [UIAction] = []
-        menuItems.append(UIAction(
-            title: "Rename group",
-            image: UIImage(systemName: "edit"),
-            handler: { _ in self.renameButtonPressed() }
-        ))
+        let renameGroupAction = UIAction(title: "Rename group") { _ in
+            self.renameButtonPressed()
+        }
         
-        menuItems.append(UIAction(
-            title: "Delete",
+        let deleteGroupAction = UIAction(
+            title: "Delete group",
             image: UIImage(systemName: "trash"),
             attributes: .destructive,
             handler: { _ in self.deleteButtonPressed() }
-        ))
-                
-        let editMenu = UIMenu(
-            title: "",
-            options: [],
-            children: menuItems
         )
+                
+        let editMenu = UIMenu(children: [renameGroupAction, deleteGroupAction])
         
         let editButton = UIBarButtonItem(
-            systemItem: .edit,
+            image: UIImage(systemName: "slider.horizontal.3"),
             primaryAction: .none,
             menu: editMenu
         )
@@ -98,7 +91,37 @@ private extension GroupViewController {
            
     // MARK: Navigation bar actions handling
     
-    func renameButtonPressed() {}
+    func renameButtonPressed() {
+        let alertController = UIAlertController(
+            title: "Rename group",
+            message: nil,
+            preferredStyle: .alert
+        )
+        alertController.addTextField { textField in
+            textField.placeholder = "Enter new name"
+            textField.clearButtonMode = .whileEditing
+        }
+        let actionOk = UIAlertAction(
+            title: "Rename",
+            style: .default
+        ) { _ in
+            if let text = alertController.textFields?.first?.text {
+                print(text)
+            } else {
+                print("No text entered")
+            }
+        }
+        
+        let actionCancel = UIAlertAction(
+            title: "Cancel",
+            style: .destructive
+        )
+        
+        alertController.addAction(actionOk)
+        alertController.addAction(actionCancel)
+        
+        present(alertController, animated: true)
+    }
     
     func deleteButtonPressed() {}
     
