@@ -74,7 +74,7 @@ private extension GroupViewController {
         let editMenu = UIMenu(children: [renameGroupAction, deleteGroupAction])
         
         let editButton = UIBarButtonItem(
-            image: UIImage(systemName: "slider.horizontal.3"),
+            image: UIImage(systemName: "text.justify"),
             primaryAction: .none,
             menu: editMenu
         )
@@ -172,7 +172,7 @@ extension GroupViewController: UICollectionViewDelegate {
             previewProvider: nil
             // TODO: Should create preview mode
         ) { actions -> UIMenu in
-            let share = UIAction(title: "Отправить") { _ in }
+            let share = UIAction(title: "Отправить") { _ in self.shareData() }
             let edit = UIAction(title: "Редактировать") { _ in }
             let deleteFromGroup = UIAction(title: "Удалить из группы") { _ in }
             let deleteFromMemory = UIAction(title: "Удалить из памяти", attributes: .destructive) { _ in }
@@ -213,6 +213,27 @@ private extension GroupViewController {
         )
         layoutSection.interGroupSpacing = Constants.sectionInterGroupSpacing
         return UICollectionViewCompositionalLayout(section: layoutSection)
+    }
+}
+
+// MARK: - UIActivityVC methods
+
+private extension GroupViewController {
+    func shareData() {
+        // FIXME: Temporary model
+        #warning("It's fake data")
+        let images = [UIImage(systemName: "phone"), UIImage(systemName: "phone")]
+        
+        let shareController = UIActivityViewController(
+            activityItems: images,
+            applicationActivities: nil
+        )
+        
+        shareController.completionWithItemsHandler = { _, bool, _, _ in
+            bool ? print("It's shared") : print("It isn't shared")
+        }
+        
+        present(shareController, animated: true)
     }
 }
 
