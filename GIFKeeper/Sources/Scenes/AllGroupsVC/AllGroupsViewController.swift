@@ -11,9 +11,9 @@ final class AllGroupsViewController: UIViewController {
     
     // MARK: FIXME
 
-    private let arrayPopularGifs = [GifModel]()
-    private let arrayLatestGifs = [GifModel]()
-    private let arrayGroupsGifs = [String]()
+    private let popularSectionGifs: [GifModel] = []
+    private let latestSectionGifs: [GifModel] = []
+    private let groupsList: [String] = []
     
     // MARK: UIElements
     
@@ -61,6 +61,52 @@ extension AllGroupsViewController {
     private func configureNavigationBar() {
         navigationItem.title = Constants.navigationTitle
         navigationItem.searchController = searchController
+        
+        setupRightBarButtonItem()
+    }
+}
+
+// MARK: - Setup right items of NavBar
+
+private extension AllGroupsViewController {
+    func setupRightBarButtonItem() {
+        let addGroupButton = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(showAddNewGroupForm)
+        )
+        
+        navigationItem.rightBarButtonItem = addGroupButton
+    }
+    
+    @objc func showAddNewGroupForm() {
+        let alert = UIAlertController(
+            title: "Add new group",
+            message: nil ,
+            preferredStyle: .alert
+        )
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Enter name for group"
+            textField.clearButtonMode = .whileEditing
+        }
+        
+        let okAction = UIAlertAction(
+            title: "OK",
+            style: .default
+        ) { _ in
+            let _ = alert.textFields?.first
+            self.navigationController?.pushViewController(DetailGifViewController(), animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .destructive
+        ) { _ in }
+        
+        [okAction, cancelAction].forEach { alert.addAction($0) }
+        present(alert, animated: true)
     }
 }
 
@@ -95,11 +141,11 @@ extension AllGroupsViewController: UICollectionViewDataSource {
         let sectionLayoutKind = SectionLayoutKind.allCases[section]
         switch sectionLayoutKind {
         case .latest:
-            return arrayLatestGifs.count
+            return latestSectionGifs.count
         case .popular:
-            return arrayPopularGifs.count
+            return popularSectionGifs.count
         case .allGroups:
-            return arrayGroupsGifs.count
+            return groupsList.count
         }
     }
     
@@ -111,36 +157,57 @@ extension AllGroupsViewController: UICollectionViewDataSource {
         let sectionLayoutKind = SectionLayoutKind.allCases[indexPath.section]
         switch sectionLayoutKind {
         case .latest:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: .gifWithTextCell,
-                for: indexPath
-            ) as? GifWithTextCell
-            else { return GifWithTextCell() }
-            
-            let model = arrayLatestGifs[indexPath.item]
-            cell.configureCell(gifModel: model)
-            return cell
+                return getGifWithTextCell(
+                    collectionView,
+                    for: indexPath,
+                    source: latestSectionGifs,
+                    section: .latest
+                )
         case .popular:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: .gifWithTextCell,
-                for: indexPath
-            ) as? GifWithTextCell
-            else { return GifWithTextCell() }
-            
-            let model = arrayPopularGifs[indexPath.item]
-            cell.configureCell(gifModel: model)
-            return cell
+                return getGifWithTextCell(
+                    collectionView,
+                    for: indexPath,
+                    source: popularSectionGifs,
+                    section: .popular
+                )
         case .allGroups:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: .groupGifCell,
-                for: indexPath
-            ) as? GroupGifCell
-            else { return GroupGifCell() }
-            
-            let item = arrayGroupsGifs[indexPath.item]
-            cell.set(name: item)
-            return cell
+            return getGroupGifCell(
+                collectionView,
+                for: indexPath,
+                source: groupsList
+            )
         }
+    }
+    
+    // TODO: Need fix when models be ready
+  
+    private func getGifWithTextCell(
+        _ collectionView: UICollectionView,
+        for indexPath: IndexPath,
+        source: [GifModel],
+        section: SectionLayoutKind
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: .gifWithTextCell,
+            for: indexPath
+        ) as? GifWithTextCell else { return GifWithTextCell() }
+        
+        cell.configureCell(gifModel: source[indexPath.item])
+        return cell
+    }
+
+    private func getGroupGifCell(
+        _ collectionView: UICollectionView,
+        for indexPath: IndexPath,
+        source: [String]
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: .groupGifCell,
+            for: indexPath
+        ) as? GroupGifCell else { return GroupGifCell() }
+        
+        cell.set(name: source[indexPath.item])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -235,7 +302,7 @@ private extension AllGroupsViewController {
         return section
     }
     
-    // MARK: Vartical layout configure
+    // MARK: Vertical layout configure
     
     func createVerticalSectionLayout(with amountColumn: Double) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
@@ -284,5 +351,5 @@ private extension AllGroupsViewController {
 // MARK: - Constants
 
 private enum Constants {
-    static let navigationTitle = "All my groups"
+    static let navigationTitle = "All groups"
 }

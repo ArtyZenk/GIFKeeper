@@ -113,10 +113,34 @@ extension DetailGifViewController {
         ]
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = "Gif name"
+        
+        setupRightBarButtonItem()
     }
 
     func configureTitleView(gifName: String) {
         navigationItem.title = gifName
+    }
+    
+}
+
+// MARK: - Setup right items of NavBar
+
+private extension DetailGifViewController {
+    func setupRightBarButtonItem() {
+        let saveGroupButton = UIBarButtonItem(
+            title: "Save",
+            style: .plain,
+            target: self,
+            action: #selector(saveGroupButtonPressed)
+        )
+        
+        navigationItem.rightBarButtonItem = saveGroupButton
+    }
+    
+    // TODO: Needs action method
+    
+    @objc func saveGroupButtonPressed() {
+        #warning("save gif method will be here")
     }
 }
 
