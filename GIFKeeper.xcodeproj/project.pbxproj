@@ -32,6 +32,13 @@
 		F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84382AD7E3700062CE7E /* SearchViewController.swift */; };
 		F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */; };
 		F3AA84422AD81AB00062CE7E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3AA84412AD81AB00062CE7E /* SnapKit */; };
+		F3CB03E72AFE8C77002A2713 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CB03E62AFE8C77002A2713 /* NetworkAPI.swift */; };
+		F3CB03E92AFE8CC2002A2713 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CB03E82AFE8CC2002A2713 /* NetworkError.swift */; };
+		F3D855422AFB6E8800A41F52 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D855412AFB6E8800A41F52 /* NetworkManager.swift */; };
+		F3D855452AFB6F1400A41F52 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F3D855442AFB6F1400A41F52 /* Alamofire */; };
+		F3D855772AFE41C000A41F52 /* Gifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D855762AFE41C000A41F52 /* Gifs.swift */; };
+		F3D8557A2AFE437300A41F52 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D855792AFE437300A41F52 /* Image.swift */; };
+		F3D8557C2AFE43A300A41F52 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8557B2AFE43A300A41F52 /* Pagination.swift */; };
 		F3FC89392AD9AA1A00C5E322 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC89382AD9AA1A00C5E322 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +69,12 @@
 		F3AA84362AD7E2CA0062CE7E /* GifGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifGroupsViewController.swift; sourceTree = "<group>"; };
 		F3AA84382AD7E3700062CE7E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F3AA843D2AD806F40062CE7E /* GifCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCoverCell.swift; sourceTree = "<group>"; };
+		F3CB03E62AFE8C77002A2713 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		F3CB03E82AFE8CC2002A2713 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F3D855412AFB6E8800A41F52 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F3D855762AFE41C000A41F52 /* Gifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifs.swift; sourceTree = "<group>"; };
+		F3D855792AFE437300A41F52 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F3D8557B2AFE43A300A41F52 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		F3FC89382AD9AA1A00C5E322 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3AA84422AD81AB00062CE7E /* SnapKit in Frameworks */,
+				F3D855452AFB6F1400A41F52 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				676C3C6F2AE4195900D5795D /* GifModel.swift */,
+				F3D855782AFE432B00A41F52 /* Gifs */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +231,7 @@
 				F3AA84352AD7E28E0062CE7E /* TabBar */,
 				F3AA843A2AD7E3AF0062CE7E /* Scenes */,
 				6795E3FE2ADE6D2C00520FE3 /* Extensions */,
+				F3D855402AFB6E2F00A41F52 /* Services */,
 				676C3C6E2AE4192200D5795D /* Models */,
 			);
 			path = Sources;
@@ -286,6 +302,34 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		F3CB03E52AFE8C3D002A2713 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F3CB03E62AFE8C77002A2713 /* NetworkAPI.swift */,
+				F3CB03E82AFE8CC2002A2713 /* NetworkError.swift */,
+				F3D855412AFB6E8800A41F52 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F3D855402AFB6E2F00A41F52 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3CB03E52AFE8C3D002A2713 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F3D855782AFE432B00A41F52 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				F3D855762AFE41C000A41F52 /* Gifs.swift */,
+				F3D855792AFE437300A41F52 /* Image.swift */,
+				F3D8557B2AFE43A300A41F52 /* Pagination.swift */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
 		F3FC89372AD9A7BA00C5E322 /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +356,7 @@
 			name = GIFKeeper;
 			packageProductDependencies = (
 				F3AA84412AD81AB00062CE7E /* SnapKit */,
+				F3D855442AFB6F1400A41F52 /* Alamofire */,
 			);
 			productName = GIFCollection;
 			productReference = 67DB929B2AD2F9B100497B80 /* GIFKeeper.app */;
@@ -343,6 +388,7 @@
 			mainGroup = 67DB92922AD2F9B100497B80;
 			packageReferences = (
 				F3AA84402AD81AB00062CE7E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F3D855432AFB6F1400A41F52 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 67DB929C2AD2F9B100497B80 /* Products */;
 			projectDirPath = "";
@@ -371,8 +417,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				676C3C702AE4195900D5795D /* GifModel.swift in Sources */,
+				F3CB03E92AFE8CC2002A2713 /* NetworkError.swift in Sources */,
 				676C3C732AE4447B00D5795D /* SectionsHeader.swift in Sources */,
 				F3FC89392AD9AA1A00C5E322 /* LoginViewController.swift in Sources */,
+				F3CB03E72AFE8C77002A2713 /* NetworkAPI.swift in Sources */,
 				F3AA84392AD7E3700062CE7E /* SearchViewController.swift in Sources */,
 				676C3C752AE459D700D5795D /* GroupGifCell.swift in Sources */,
 				F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */,
@@ -382,17 +430,21 @@
 				F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */,
 				F329CDDE2AEA596600655333 /* EditGroupViewController.swift in Sources */,
 				676C3C6A2AE31E6300D5795D /* AllGroupsViewController.swift in Sources */,
+				F3D855422AFB6E8800A41F52 /* NetworkManager.swift in Sources */,
 				67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */,
 				F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */,
+				F3D8557C2AFE43A300A41F52 /* Pagination.swift in Sources */,
 				67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */,
 				676C3C782AEC2C7F00D5795D /* GroupViewController.swift in Sources */,
 				F3820B292AE147B700C83C3E /* FavoriteGroupsViewController.swift in Sources */,
 				6795E4002ADE6E3600520FE3 /* UIColor+Extensions.swift in Sources */,
+				F3D8557A2AFE437300A41F52 /* Image.swift in Sources */,
 				671805B32ADD8C7D001650FC /* CustomStackView.swift in Sources */,
 				671805AF2ADD87E9001650FC /* CustomLabel.swift in Sources */,
 				671805B12ADD8961001650FC /* CustomTextField.swift in Sources */,
 				67C7070B2AD9D653009EF2C1 /* CustomButton.swift in Sources */,
 				676C3C6C2AE3265300D5795D /* GifWithTextCell.swift in Sources */,
+				F3D855772AFE41C000A41F52 /* Gifs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +664,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		F3D855432AFB6F1400A41F52 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -619,6 +679,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F3AA84402AD81AB00062CE7E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		F3D855442AFB6F1400A41F52 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3D855432AFB6F1400A41F52 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
