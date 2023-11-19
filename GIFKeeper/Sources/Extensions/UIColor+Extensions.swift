@@ -14,4 +14,12 @@ extension UIColor {
                 blue: 144 / 255,
                 alpha: 1)
     }
+    
+    static func lightGrayHalfAlpha() -> UIColor {
+        UIColor.lightGray.withAlphaComponent(0.5)
+    }
+    
+    static func lightGrayLowAlpha() -> UIColor {
+        UIColor.lightGray.withAlphaComponent(0.2)
+    }
 }
