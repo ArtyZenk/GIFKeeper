@@ -17,7 +17,7 @@ class DetailGifViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.borderWidth = Constants.onePointBorderWidth
-        imageView.layer.borderColor = UIColor.lightGray.withAlphaComponent(Constants.halfOfPointAlpha).cgColor
+        imageView.layer.borderColor = UIColor.lightGrayHalfAlpha().cgColor
         imageView.layer.cornerRadius = Constants.gifViewRadius
         return imageView
     }()
@@ -44,14 +44,15 @@ class DetailGifViewController: UIViewController {
     
     private var descriptionStackView = CustomStackView()
     private var descriptionLabel = CustomLabel(textForLabel: "Description")
-    private var descriptionTextView: UITextView = {
+    private lazy var descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.font = .systemFont(ofSize: Constants.appFontSize)
         textView.isScrollEnabled = true
         textView.autocapitalizationType = .sentences
         textView.layer.cornerRadius = Constants.textFieldCornerRadius
         textView.layer.borderWidth = Constants.onePointBorderWidth
-        textView.layer.borderColor = UIColor.lightGray.withAlphaComponent(Constants.halfOfPointAlpha).cgColor
+        textView.layer.borderColor = UIColor.lightGrayHalfAlpha().cgColor
+        textView.delegate = self
         return textView
     }()
     
@@ -62,7 +63,7 @@ class DetailGifViewController: UIViewController {
         label.numberOfLines = Constants.numberOfLinesTextView
         label.layer.cornerRadius = Constants.textFieldCornerRadius
         label.layer.borderWidth = Constants.onePointBorderWidth
-        label.layer.borderColor = UIColor.lightGray.withAlphaComponent(Constants.veryLightAlpha).cgColor
+        label.layer.borderColor = UIColor.lightGrayLowAlpha().cgColor
         return label
     }()
     
@@ -90,7 +91,7 @@ class DetailGifViewController: UIViewController {
         registerForKeyboardNotifications()
     }
     
-    // MARK: Private methods
+    // MARK: Handle actions methods
     
     @objc private func editGroupsButtonPressed() {
         let editGroupScreen = UINavigationController(rootViewController: EditGroupViewController())
@@ -106,14 +107,7 @@ class DetailGifViewController: UIViewController {
 
 extension DetailGifViewController {
     private func configureNavigationBar() {
-        let attributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.appMainColor(),
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.fontSizeNavBarTitle,
-                                                           weight: .thin),
-        ]
-        navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = "Gif name"
-        
         setupRightBarButtonItem()
     }
 
@@ -206,7 +200,6 @@ private extension DetailGifViewController {
 private extension DetailGifViewController {
     func configureView() {
         view.backgroundColor = .white
-        descriptionTextView.delegate = self
         nameTextField.delegate = self
         tagsTextField.delegate = self
     }
@@ -331,9 +324,6 @@ private extension DetailGifViewController {
 // MARK: - Constants
 
 private enum Constants {
-    static var halfOfPointAlpha: CGFloat = 0.5
-    static var veryLightAlpha: CGFloat = 0.2
-   
     static let gifViewRadius: CGFloat = 8
     static let spacingStackView: CGFloat = 5
    

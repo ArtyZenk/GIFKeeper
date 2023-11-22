@@ -16,9 +16,11 @@
 		676C3C732AE4447B00D5795D /* SectionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C722AE4447B00D5795D /* SectionsHeader.swift */; };
 		676C3C752AE459D700D5795D /* GroupGifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C742AE459D700D5795D /* GroupGifCell.swift */; };
 		676C3C782AEC2C7F00D5795D /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C772AEC2C7F00D5795D /* GroupViewController.swift */; };
+		677DE65C2B07A509006A957F /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677DE65B2B07A509006A957F /* SettingsCell.swift */; };
 		6795E4002ADE6E3600520FE3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6795E3FF2ADE6E3600520FE3 /* UIColor+Extensions.swift */; };
 		67C707082AD9A76A009EF2C1 /* DetailGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */; };
 		67C7070B2AD9D653009EF2C1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C7070A2AD9D653009EF2C1 /* CustomButton.swift */; };
+		67C8FAED2AFD4A37007D59D7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C8FAEC2AFD4A37007D59D7 /* SettingsViewController.swift */; };
 		67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB929E2AD2F9B100497B80 /* AppDelegate.swift */; };
 		67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */; };
 		67DB92A82AD2F9B200497B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67DB92A72AD2F9B200497B80 /* Assets.xcassets */; };
@@ -52,9 +54,11 @@
 		676C3C722AE4447B00D5795D /* SectionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsHeader.swift; sourceTree = "<group>"; };
 		676C3C742AE459D700D5795D /* GroupGifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupGifCell.swift; sourceTree = "<group>"; };
 		676C3C772AEC2C7F00D5795D /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		677DE65B2B07A509006A957F /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		6795E3FF2ADE6E3600520FE3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGifViewController.swift; sourceTree = "<group>"; };
 		67C7070A2AD9D653009EF2C1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		67C8FAEC2AFD4A37007D59D7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		67DB929B2AD2F9B100497B80 /* GIFKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DB929E2AD2F9B100497B80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,23 @@
 			path = DetailVC;
 			sourceTree = "<group>";
 		};
+		67C8FAEB2AFD49DC007D59D7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				67C8FAEE2AFD4C8D007D59D7 /* Cell */,
+				67C8FAEC2AFD4A37007D59D7 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		67C8FAEE2AFD4C8D007D59D7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				677DE65B2B07A509006A957F /* SettingsCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		67DB92922AD2F9B100497B80 = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +287,7 @@
 		F3AA843A2AD7E3AF0062CE7E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				67C8FAEB2AFD49DC007D59D7 /* Settings */,
 				676C3C762AEC2C5200D5795D /* GroupVC */,
 				67C707062AD9A736009EF2C1 /* DetailVC */,
 				F3FC89372AD9A7BA00C5E322 /* LoginVC */,
@@ -433,6 +455,7 @@
 				F3D855422AFB6E8800A41F52 /* NetworkManager.swift in Sources */,
 				67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */,
 				F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */,
+				677DE65C2B07A509006A957F /* SettingsCell.swift in Sources */,
 				F3D8557C2AFE43A300A41F52 /* Pagination.swift in Sources */,
 				67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */,
 				676C3C782AEC2C7F00D5795D /* GroupViewController.swift in Sources */,
@@ -444,6 +467,7 @@
 				671805B12ADD8961001650FC /* CustomTextField.swift in Sources */,
 				67C7070B2AD9D653009EF2C1 /* CustomButton.swift in Sources */,
 				676C3C6C2AE3265300D5795D /* GifWithTextCell.swift in Sources */,
+				67C8FAED2AFD4A37007D59D7 /* SettingsViewController.swift in Sources */,
 				F3D855772AFE41C000A41F52 /* Gifs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

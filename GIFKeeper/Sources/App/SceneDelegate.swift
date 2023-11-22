@@ -16,6 +16,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
+        
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.foregroundColor: UIColor.appMainColor(),
+            NSAttributedString.Key.font: UIFont.systemFont(
+                ofSize: 28,
+                weight: .thin
+            ),
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attributes
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}
