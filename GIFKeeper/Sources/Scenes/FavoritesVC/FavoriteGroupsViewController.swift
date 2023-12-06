@@ -27,11 +27,11 @@ final class FavoriteGroupsViewController: UIViewController {
     private lazy var favoriteGroupsCollection: UICollectionView = {
         let layout = createLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(FavoriteGifCoverCell.self, forCellWithReuseIdentifier: .favoriteGifCell)
+        collection.register(GroupGifCell.self, forCellWithReuseIdentifier: .groupGifCell)
         collection.register(
-            FavoriteHeader.self,
+            SectionsHeader.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: .favoriteHeader
+            withReuseIdentifier: .sectionsHeader
         )
         collection.showsVerticalScrollIndicator = false
         collection.dataSource = self
@@ -92,19 +92,19 @@ extension FavoriteGroupsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        collectionView.dequeueReusableCell(withReuseIdentifier: .favoriteGifCell, for: indexPath)
+        collectionView.dequeueReusableCell(withReuseIdentifier: .groupGifCell, for: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard 
             let header = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
-                withReuseIdentifier: .favoriteHeader,
+                withReuseIdentifier: .sectionsHeader,
                 for: indexPath
-            ) as? FavoriteHeader
+            ) as? SectionsHeader
         else { return UICollectionReusableView() }
         
-        header.title.text = "Favorite"
+        header.set(titleText: "Favorites")
         return header
     }
 }
@@ -113,34 +113,7 @@ extension FavoriteGroupsViewController: UICollectionViewDataSource {
 
 private extension FavoriteGroupsViewController {
     func createLayout() -> UICollectionViewCompositionalLayout {
-        let layoutSectionHeaderSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(Constants.headerWidth),
-            heightDimension: .estimated(Constants.headerHeight)
-        )
-        let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: layoutSectionHeaderSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top
-        )
-        
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(Constants.itemWidth),
-            heightDimension: .absolute(Constants.itemHeight)
-        )
-        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-        layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 15, trailing: 5)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(Constants.absoluteViewWidth),
-            heightDimension: .fractionalWidth(Constants.absoluteViewHeight / Constants.countGroupInHeight * Constants.groupHeightOffset)
-        )
-        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
-       
-        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-        layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
-        layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 35, bottom: 5, trailing: 5)
-        layoutSection.interGroupSpacing = Constants.sectionInterGroupSpacing
-        
+        let layoutSection = CustomLayoutSection.shared.create(with: SectionSettings())
         return UICollectionViewCompositionalLayout(section: layoutSection)
     }
 }

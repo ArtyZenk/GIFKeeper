@@ -8,18 +8,18 @@
 import UIKit
 
 extension UIColor {
-    static func appMainColor() -> UIColor {
+    static var appMainColor: UIColor {
         UIColor(red: 58 / 255,
                 green: 163 / 255,
                 blue: 144 / 255,
                 alpha: 1)
     }
     
-    static func lightGrayHalfAlpha() -> UIColor {
+    static var lightGrayHalfAlpha: UIColor {
         UIColor.lightGray.withAlphaComponent(0.5)
     }
     
-    static func lightGrayLowAlpha() -> UIColor {
+    static var lightGrayLowAlpha: UIColor {
         UIColor.lightGray.withAlphaComponent(0.2)
     }
 }

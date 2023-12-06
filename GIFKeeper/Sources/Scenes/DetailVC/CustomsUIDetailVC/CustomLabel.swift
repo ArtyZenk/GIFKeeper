@@ -20,7 +20,7 @@ final class CustomLabel: UILabel {
         fatalError("init(coder:) has not been implement")
     }
     
-    func setupLabelProperties() {
+    private func setupLabelProperties() {
         text = textLabel
         font = UIFont.systemFont(ofSize: 20)
     }

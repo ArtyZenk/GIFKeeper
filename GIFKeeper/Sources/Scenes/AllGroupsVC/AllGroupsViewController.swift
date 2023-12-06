@@ -255,96 +255,32 @@ private extension AllGroupsViewController {
     }
     
     func createCollectionLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { [weak self] (sectionIndex, _ ) -> NSCollectionLayoutSection? in
-            guard let self else { return nil }
+        let sectionLayout = CustomLayoutSection.shared
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, _ ) -> NSCollectionLayoutSection in
             let sectionLayoutKind = SectionLayoutKind.allCases[sectionIndex]
             let amountColumns = sectionLayoutKind.columnAmountOnScreenInSection()
             switch sectionLayoutKind {
             case .latest:
-                return self.createHorizontalSectionsLayout(with: amountColumns)
+                return sectionLayout.create(
+                    with: SectionSettings(
+                        columnAmount: amountColumns,
+                        horizontalScroll: true
+                    )
+                )
             case .popular:
-                return self.createHorizontalSectionsLayout(with: amountColumns)
+                return sectionLayout.create(
+                    with: SectionSettings(
+                        columnAmount: amountColumns,
+                        horizontalScroll: true
+                    )
+                )
             case .allGroups:
-                return self.createVerticalSectionLayout(with: amountColumns)
+                return sectionLayout.create(
+                    with: SectionSettings(columnAmount: amountColumns)
+                )
             }
         }
         return layout
-    }
-    
-    // MARK: Horizontal layout configure
-    
-    func createHorizontalSectionsLayout(with countColumn: Double) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1 / countColumn),
-            heightDimension: .fractionalHeight(1)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(
-            top: 5,
-            leading: 5,
-            bottom: 5,
-            trailing: 5
-        )
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalWidth(1 / countColumn)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            subitems: [item]
-        )
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.boundarySupplementaryItems = [headerItem]
-        section.supplementaryContentInsetsReference = .safeArea
-        return section
-    }
-    
-    // MARK: Vertical layout configure
-    
-    func createVerticalSectionLayout(with amountColumn: Double) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1 / amountColumn),
-            heightDimension: .fractionalHeight(1)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(
-            top: 5,
-            leading: 5,
-            bottom: 5,
-            trailing: 5
-        )
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalWidth(1 / amountColumn)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            subitems: [item]
-        )
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [headerItem]
-        section.supplementaryContentInsetsReference = .safeArea
-        return section
-    }
-    
-    // MARK: Headers of Sections
-    
-    private var headerItem: NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(25)
-        )
-        
-        return NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .topLeading
-        )
     }
 }
 

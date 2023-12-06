@@ -81,8 +81,8 @@ private extension EditGroupViewController {
 
 private extension EditGroupViewController {
     func setupNavigationBar() {
-        navigationController?.navigationBar.tintColor = UIColor.appMainColor()
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.appMainColor()]
+        navigationController?.navigationBar.tintColor = UIColor.appMainColor
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.appMainColor]
         title = "Gif name"
         
         navigationItem.setLeftBarButton(

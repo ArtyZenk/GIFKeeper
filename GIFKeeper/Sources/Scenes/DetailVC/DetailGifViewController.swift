@@ -17,7 +17,7 @@ class DetailGifViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.borderWidth = Constants.onePointBorderWidth
-        imageView.layer.borderColor = UIColor.lightGrayHalfAlpha().cgColor
+        imageView.layer.borderColor = UIColor.lightGrayHalfAlpha.cgColor
         imageView.layer.cornerRadius = Constants.gifViewRadius
         return imageView
     }()
@@ -51,7 +51,7 @@ class DetailGifViewController: UIViewController {
         textView.autocapitalizationType = .sentences
         textView.layer.cornerRadius = Constants.textFieldCornerRadius
         textView.layer.borderWidth = Constants.onePointBorderWidth
-        textView.layer.borderColor = UIColor.lightGrayHalfAlpha().cgColor
+        textView.layer.borderColor = UIColor.lightGrayHalfAlpha.cgColor
         textView.delegate = self
         return textView
     }()
@@ -63,7 +63,7 @@ class DetailGifViewController: UIViewController {
         label.numberOfLines = Constants.numberOfLinesTextView
         label.layer.cornerRadius = Constants.textFieldCornerRadius
         label.layer.borderWidth = Constants.onePointBorderWidth
-        label.layer.borderColor = UIColor.lightGrayLowAlpha().cgColor
+        label.layer.borderColor = UIColor.lightGrayLowAlpha.cgColor
         return label
     }()
     

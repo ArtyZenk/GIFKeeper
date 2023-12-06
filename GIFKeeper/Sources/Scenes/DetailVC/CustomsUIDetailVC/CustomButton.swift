@@ -20,9 +20,9 @@ final class CustomButton: UIButton {
         fatalError("init(coder:) has not been implement")
     }
     
-    func setupButtonProperties() {
+    private func setupButtonProperties() {
         setTitle(titleButton, for: .normal)
-        let color = titleButton == "Delete" ? .red : UIColor.appMainColor()
+        let color = titleButton == "Delete" ? .red : UIColor.appMainColor
         setTitleColor(color, for: .normal)
         layer.cornerRadius = 18
         layer.borderWidth = 1

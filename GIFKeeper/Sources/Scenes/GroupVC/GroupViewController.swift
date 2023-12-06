@@ -58,7 +58,6 @@ private extension GroupViewController {
 // MARK: - Setup right items of NavBar
 
 private extension GroupViewController {
-
     func setupRightBarButtonItems() {
         let renameGroupAction = UIAction(title: "Rename group") { _ in
             self.renameButtonPressed()
@@ -186,32 +185,12 @@ extension GroupViewController: UICollectionViewDelegate {
 
 private extension GroupViewController {
     func createLayout() -> UICollectionViewCompositionalLayout {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(Constants.fullComponentSize / Constants.amountColumn),
-            heightDimension: .fractionalHeight(
-                Constants.fullComponentSize / Constants.amountColumn * Constants.itemHeightOffset
+        let layoutSection = CustomLayoutSection.shared.create(
+            with: SectionSettings(
+                columnAmount: 3,
+                isGroup: false
             )
         )
-        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(Constants.fullComponentSize),
-            heightDimension: .fractionalWidth(1 / Constants.amountColumn)
-        )
-        let layoutGroup = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            subitems: [layoutItem]
-        )
-        layoutGroup.interItemSpacing = .fixed(Constants.groupInterItemSpacing)
-        
-        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-        layoutSection.contentInsets = .init(
-            top: 5,
-            leading: 5,
-            bottom: 5,
-            trailing: 5
-        )
-        layoutSection.interGroupSpacing = Constants.sectionInterGroupSpacing
         return UICollectionViewCompositionalLayout(section: layoutSection)
     }
 }

@@ -16,7 +16,7 @@ final class SectionsHeader: UICollectionReusableView {
          title.font = UIFont.systemFont(
             ofSize: 25,
             weight: .light)
-         title.textColor = UIColor.appMainColor()
+         title.textColor = UIColor.appMainColor
          return title
      }()
 
