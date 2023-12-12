@@ -18,7 +18,7 @@ final class CustomTextField: UITextField {
         fatalError("init(coder:) has not been implement")
     }
     
-    func setupTextFieldProperties() {
+    private func setupTextFieldProperties() {
         font = .systemFont(ofSize: 20)
         clearsOnBeginEditing = true
         layer.cornerRadius = 8

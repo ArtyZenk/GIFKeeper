@@ -64,7 +64,6 @@ private extension SearchViewController {
     }
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = Constants.navigationTitle
         navigationItem.searchController = searchController
     }
@@ -74,25 +73,13 @@ private extension SearchViewController {
 
 private extension SearchViewController {
     func createLayout() -> UICollectionViewCompositionalLayout {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(Constants.absoluteViewWidth / Constants.countItemInWidth),
-            heightDimension: .fractionalHeight(Constants.absoluteViewHeight / Constants.countItemInHeight * Constants.itemHeightOffset)
+        let layoutSection = CustomLayoutSection.shared.create(
+            with: SectionSettings(
+                columnAmount: 3,
+                isGroup: false
+            )
         )
-        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(Constants.absoluteViewWidth),
-            heightDimension: .fractionalHeight(Constants.absoluteViewWidth / Constants.countGroupInHeight)
-        )
-        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
-        layoutGroup.interItemSpacing = .fixed(Constants.groupInterItemSpacing)
-        
-        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-        layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        layoutSection.interGroupSpacing = Constants.sectionInterGroupSpacing
-        let layout = UICollectionViewCompositionalLayout(section: layoutSection)
-        
-        return layout
+        return UICollectionViewCompositionalLayout(section: layoutSection)
     }
 }
 

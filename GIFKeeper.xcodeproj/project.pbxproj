@@ -10,6 +10,7 @@
 		671805AF2ADD87E9001650FC /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805AE2ADD87E9001650FC /* CustomLabel.swift */; };
 		671805B12ADD8961001650FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805B02ADD8961001650FC /* CustomTextField.swift */; };
 		671805B32ADD8C7D001650FC /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671805B22ADD8C7D001650FC /* CustomStackView.swift */; };
+		671824F42B1E6A1700645936 /* CustomLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671824F32B1E6A1700645936 /* CustomLayoutSection.swift */; };
 		676C3C6A2AE31E6300D5795D /* AllGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C692AE31E6300D5795D /* AllGroupsViewController.swift */; };
 		676C3C6C2AE3265300D5795D /* GifWithTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C6B2AE3265300D5795D /* GifWithTextCell.swift */; };
 		676C3C702AE4195900D5795D /* GifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C3C6F2AE4195900D5795D /* GifModel.swift */; };
@@ -48,6 +49,7 @@
 		671805AE2ADD87E9001650FC /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		671805B02ADD8961001650FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		671805B22ADD8C7D001650FC /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
+		671824F32B1E6A1700645936 /* CustomLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutSection.swift; sourceTree = "<group>"; };
 		676C3C692AE31E6300D5795D /* AllGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsViewController.swift; sourceTree = "<group>"; };
 		676C3C6B2AE3265300D5795D /* GifWithTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifWithTextCell.swift; sourceTree = "<group>"; };
 		676C3C6F2AE4195900D5795D /* GifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifModel.swift; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		671805B42ADD9C41001650FC /* CustomsUIElements */ = {
+		671805B42ADD9C41001650FC /* CustomsUIDetailVC */ = {
 			isa = PBXGroup;
 			children = (
 				67C7070A2AD9D653009EF2C1 /* CustomButton.swift */,
@@ -103,7 +105,15 @@
 				671805B22ADD8C7D001650FC /* CustomStackView.swift */,
 				671805B02ADD8961001650FC /* CustomTextField.swift */,
 			);
-			path = CustomsUIElements;
+			path = CustomsUIDetailVC;
+			sourceTree = "<group>";
+		};
+		671824F22B1E68F800645936 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				671824F32B1E6A1700645936 /* CustomLayoutSection.swift */,
+			);
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 		676C3C682AE31E2600D5795D /* AllGroupsVC */ = {
@@ -161,7 +171,7 @@
 		67C707062AD9A736009EF2C1 /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
-				671805B42ADD9C41001650FC /* CustomsUIElements */,
+				671805B42ADD9C41001650FC /* CustomsUIDetailVC */,
 				67C707072AD9A76A009EF2C1 /* DetailGifViewController.swift */,
 				F329CDDD2AEA596600655333 /* EditGroupViewController.swift */,
 			);
@@ -287,14 +297,15 @@
 		F3AA843A2AD7E3AF0062CE7E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				67C8FAEB2AFD49DC007D59D7 /* Settings */,
 				676C3C762AEC2C5200D5795D /* GroupVC */,
+				67C8FAEB2AFD49DC007D59D7 /* Settings */,
 				67C707062AD9A736009EF2C1 /* DetailVC */,
 				F3FC89372AD9A7BA00C5E322 /* LoginVC */,
 				F3AA843B2AD802300062CE7E /* GroupsVC */,
-				676C3C682AE31E2600D5795D /* AllGroupsVC */,
 				F3AA843C2AD802430062CE7E /* SearchVC */,
+				676C3C682AE31E2600D5795D /* AllGroupsVC */,
 				F3820B272AE1473400C83C3E /* FavoritesVC */,
+				671824F22B1E68F800645936 /* CustomUI */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -461,6 +472,7 @@
 				676C3C782AEC2C7F00D5795D /* GroupViewController.swift in Sources */,
 				F3820B292AE147B700C83C3E /* FavoriteGroupsViewController.swift in Sources */,
 				6795E4002ADE6E3600520FE3 /* UIColor+Extensions.swift in Sources */,
+				671824F42B1E6A1700645936 /* CustomLayoutSection.swift in Sources */,
 				F3D8557A2AFE437300A41F52 /* Image.swift in Sources */,
 				671805B32ADD8C7D001650FC /* CustomStackView.swift in Sources */,
 				671805AF2ADD87E9001650FC /* CustomLabel.swift in Sources */,

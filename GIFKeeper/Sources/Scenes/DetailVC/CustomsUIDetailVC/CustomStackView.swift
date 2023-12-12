@@ -18,7 +18,7 @@ final class CustomStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupStackViewProperties() {
+    private func setupStackViewProperties() {
         axis = .vertical
         spacing = 2
     }

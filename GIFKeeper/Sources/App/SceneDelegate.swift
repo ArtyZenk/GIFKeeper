@@ -22,13 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func setupNavigationBar() {
         let attributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.appMainColor(),
+            NSAttributedString.Key.foregroundColor: UIColor.appMainColor,
             NSAttributedString.Key.font: UIFont.systemFont(
                 ofSize: 28,
                 weight: .thin
             ),
         ]
         UINavigationBar.appearance().titleTextAttributes = attributes
+        UINavigationBar.appearance().prefersLargeTitles = false
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}

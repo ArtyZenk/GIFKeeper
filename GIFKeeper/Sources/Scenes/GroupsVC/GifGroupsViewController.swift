@@ -28,7 +28,7 @@ private extension GifGroupsViewController {
     func setupLayout() {}
     
     func setupView() {
-        view.backgroundColor = .red
+        view.backgroundColor = .white
     }
     
     func setupNavigationBar() {
