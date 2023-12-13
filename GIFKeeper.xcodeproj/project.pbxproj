@@ -26,8 +26,6 @@
 		67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB92A02AD2F9B100497B80 /* SceneDelegate.swift */; };
 		67DB92A82AD2F9B200497B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67DB92A72AD2F9B200497B80 /* Assets.xcassets */; };
 		67DB92AB2AD2F9B200497B80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67DB92A92AD2F9B200497B80 /* LaunchScreen.storyboard */; };
-		F3171C442AE16610002B694C /* FavoriteGifCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */; };
-		F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */; };
 		F329CDDE2AEA596600655333 /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329CDDD2AEA596600655333 /* EditGroupViewController.swift */; };
 		F3820B292AE147B700C83C3E /* FavoriteGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */; };
 		F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AA84332AD7E1B60062CE7E /* TabBarController.swift */; };
@@ -67,8 +65,6 @@
 		67DB92A72AD2F9B200497B80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67DB92AA2AD2F9B200497B80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67DB92AC2AD2F9B200497B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGifCoverCell.swift; sourceTree = "<group>"; };
-		F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHeader.swift; sourceTree = "<group>"; };
 		F329CDDD2AEA596600655333 /* EditGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
 		F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGroupsViewController.swift; sourceTree = "<group>"; };
 		F3AA84332AD7E1B60062CE7E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -111,6 +107,8 @@
 		671824F22B1E68F800645936 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				676C3C712AE4445B00D5795D /* Header */,
+				676C3C6D2AE327CE00D5795D /* Cell */,
 				671824F32B1E6A1700645936 /* CustomLayoutSection.swift */,
 			);
 			path = CustomUI;
@@ -119,8 +117,6 @@
 		676C3C682AE31E2600D5795D /* AllGroupsVC */ = {
 			isa = PBXGroup;
 			children = (
-				676C3C712AE4445B00D5795D /* Header */,
-				676C3C6D2AE327CE00D5795D /* Cell */,
 				676C3C692AE31E6300D5795D /* AllGroupsViewController.swift */,
 			);
 			path = AllGroupsVC;
@@ -220,27 +216,9 @@
 			path = GIFKeeper;
 			sourceTree = "<group>";
 		};
-		F3171C452AE16619002B694C /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F3171C432AE16610002B694C /* FavoriteGifCoverCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		F3171C462AE3A67C002B694C /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				F3171C472AE3A6B0002B694C /* FavoriteHeader.swift */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
 		F3820B272AE1473400C83C3E /* FavoritesVC */ = {
 			isa = PBXGroup;
 			children = (
-				F3171C462AE3A67C002B694C /* Header */,
-				F3171C452AE16619002B694C /* Cell */,
 				F3820B282AE147B700C83C3E /* FavoriteGroupsViewController.swift */,
 			);
 			path = FavoritesVC;
@@ -458,14 +436,12 @@
 				676C3C752AE459D700D5795D /* GroupGifCell.swift in Sources */,
 				F3AA84342AD7E1B60062CE7E /* TabBarController.swift in Sources */,
 				67C707082AD9A76A009EF2C1 /* DetailGifViewController.swift in Sources */,
-				F3171C442AE16610002B694C /* FavoriteGifCoverCell.swift in Sources */,
 				F3AA843E2AD806F40062CE7E /* GifCoverCell.swift in Sources */,
 				F3AA84372AD7E2CA0062CE7E /* GifGroupsViewController.swift in Sources */,
 				F329CDDE2AEA596600655333 /* EditGroupViewController.swift in Sources */,
 				676C3C6A2AE31E6300D5795D /* AllGroupsViewController.swift in Sources */,
 				F3D855422AFB6E8800A41F52 /* NetworkManager.swift in Sources */,
 				67DB929F2AD2F9B100497B80 /* AppDelegate.swift in Sources */,
-				F3171C482AE3A6B0002B694C /* FavoriteHeader.swift in Sources */,
 				677DE65C2B07A509006A957F /* SettingsCell.swift in Sources */,
 				F3D8557C2AFE43A300A41F52 /* Pagination.swift in Sources */,
 				67DB92A12AD2F9B100497B80 /* SceneDelegate.swift in Sources */,
