@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
-final class GroupGifCell: UICollectionViewCell {
+// FIXME: Temporary model
+#warning("Add in viper module")
+
+protocol CursorProtocol {
+    func setCursor(isEnabled: Bool)
+}
+
+final class GroupGifCell: UICollectionViewCell, CursorProtocol {
 
     // MARK: UIElements
     
@@ -18,12 +25,19 @@ final class GroupGifCell: UICollectionViewCell {
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
+        imageView.layer.borderColor = CGColor(
+            red: 58 / 255,
+            green: 163 / 255,
+            blue: 144 / 255,
+            alpha: 1
+        )
         return imageView
     }()
     
     private let groupName: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
+        label.text = "Sample"
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -56,8 +70,7 @@ private extension GroupGifCell {
     func setupLayout() {
         groupCoverImage.snp.makeConstraints { $0.edges.equalToSuperview() }
         groupName.snp.makeConstraints {
-            $0.top.left.equalToSuperview().offset(Constants.indentUIElements)
-            $0.right.equalToSuperview().inset(Constants.indentUIElements)
+            $0.bottom.horizontalEdges.equalToSuperview().inset(Constants.indentUIElements)
         }
     }
 }
@@ -67,6 +80,10 @@ private extension GroupGifCell {
 extension GroupGifCell {
     func set(name: String) {
         groupName.text = name
+    }
+    
+    func setCursor(isEnabled: Bool) {
+        groupCoverImage.layer.borderWidth = isEnabled ? 4 : 0
     }
     
     override func prepareForReuse() {

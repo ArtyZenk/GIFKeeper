@@ -18,7 +18,11 @@ final class FavoriteGroupsViewController: UIViewController {
     
     private lazy var allGroupsTable: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: .myCategoriesCell)
+        table.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: .myCategoriesCell
+        )
+        table.rowHeight = Constants.tableRowHeight
         table.dataSource = self
         table.delegate = self
         return table
@@ -26,8 +30,14 @@ final class FavoriteGroupsViewController: UIViewController {
     
     private lazy var favoriteGroupsCollection: UICollectionView = {
         let layout = createLayout()
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(GroupGifCell.self, forCellWithReuseIdentifier: .groupGifCell)
+        let collection = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: layout
+        )
+        collection.register(
+            GroupGifCell.self,
+            forCellWithReuseIdentifier: .groupGifCell
+        )
         collection.register(
             SectionsHeader.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -39,14 +49,19 @@ final class FavoriteGroupsViewController: UIViewController {
         return collection
     }()
     
+    // FIXME: Temporary model
+    #warning("Must move it in model")
+    private var previousSelectedIndexPath = IndexPath()
+    private var selectedIndexPath = IndexPath()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
+        setupView()
         setupHierarchy()
         setupLayout()
-        setupView()
-        setupNavigationBar()
     }
 }
 
@@ -55,10 +70,6 @@ final class FavoriteGroupsViewController: UIViewController {
 extension FavoriteGroupsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        Constants.tableRowHeight
     }
 }
 
@@ -70,7 +81,10 @@ extension FavoriteGroupsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: .myCategoriesCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: .myCategoriesCell,
+            for: indexPath
+        )
         var content = cell.defaultContentConfiguration()
         content.text = Constants.tableCellText
         content.image = UIImage(systemName: Constants.tableCellImage)
@@ -82,7 +96,20 @@ extension FavoriteGroupsViewController: UITableViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 
-extension FavoriteGroupsViewController: UICollectionViewDelegate {}
+extension FavoriteGroupsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        
+        if let previousCell = collectionView.cellForItem(at: previousSelectedIndexPath) as? CursorProtocol {
+            previousCell.setCursor(isEnabled: false)
+        }
+        
+        let selectedCell = collectionView.cellForItem(at: selectedIndexPath) as? CursorProtocol
+        selectedCell?.setCursor(isEnabled: true)
+        
+        previousSelectedIndexPath = selectedIndexPath
+    }
+}
 
 // MARK: - UICollectionViewDataSource
 
@@ -115,39 +142,6 @@ private extension FavoriteGroupsViewController {
     func createLayout() -> UICollectionViewCompositionalLayout {
         let layoutSection = CustomLayoutSection.shared.create(with: SectionSettings())
         return UICollectionViewCompositionalLayout(section: layoutSection)
-    }
-}
-
-// MARK: - Setup Hierarchy
-
-private extension FavoriteGroupsViewController {
-    func setupHierarchy() {
-        view.addSubview(allGroupsTable)
-        view.addSubview(favoriteGroupsCollection)
-    }
-}
-
-// MARK: - Setup Layout
-
-private extension FavoriteGroupsViewController {
-    func setupLayout() {
-        allGroupsTable.snp.makeConstraints {
-            $0.top.left.right.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(Constants.tableHeight)
-        }
-        
-        favoriteGroupsCollection.snp.makeConstraints {
-            $0.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.top.equalTo(allGroupsTable.snp.bottom).offset(Constants.CollectionTopConstrain)
-        }
-    }
-}
-
-// MARK: - Setup View
-
-private extension FavoriteGroupsViewController {
-    func setupView() {
-        view.backgroundColor = .white
     }
 }
 
@@ -184,6 +178,38 @@ private extension FavoriteGroupsViewController {
     }
 }
 
+// MARK: - Setup View
+
+private extension FavoriteGroupsViewController {
+    func setupView() {
+        view.backgroundColor = .white
+    }
+}
+
+// MARK: - Setup Hierarchy
+
+private extension FavoriteGroupsViewController {
+    func setupHierarchy() {
+        [allGroupsTable, favoriteGroupsCollection].forEach { view.addSubview($0) }
+    }
+}
+
+// MARK: - Setup Layout
+
+private extension FavoriteGroupsViewController {
+    func setupLayout() {
+        allGroupsTable.snp.makeConstraints {
+            $0.top.left.right.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(Constants.tableHeight)
+        }
+        
+        favoriteGroupsCollection.snp.makeConstraints {
+            $0.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(allGroupsTable.snp.bottom).offset(Constants.CollectionTopConstrain)
+        }
+    }
+}
+
 // MARK: - Alert methods
 
 private extension FavoriteGroupsViewController {
@@ -194,9 +220,9 @@ private extension FavoriteGroupsViewController {
             preferredStyle: .alert
         )
         
-        alert.addTextField { textField in
-            textField.placeholder = "Enter name for group"
-            textField.clearButtonMode = .whileEditing
+        alert.addTextField {
+            $0.placeholder = "Enter name for group"
+            $0.clearButtonMode = .whileEditing
         }
         
         let okAction = UIAlertAction(
@@ -231,18 +257,9 @@ private enum Constants {
     
     static let CollectionTopConstrain: CGFloat = 16
     static let numberOfItemsInSection = 25
-    
-    static let headerWidth: CGFloat = 0.93
-    static let headerHeight: CGFloat = 30
-    static let itemWidth: CGFloat = 100
-    static let itemHeight: CGFloat = 100
-    static let absoluteViewWidth: CGFloat = 1
-    static let absoluteViewHeight: CGFloat = 1
-    static let countGroupInHeight: CGFloat = 4
-    static let groupHeightOffset: CGFloat = 1.5
-        
-    static let sectionInterGroupSpacing: CGFloat = -35
 }
+
+// MARK: - Identifier
 
 private extension String {
     static let myCategoriesCell = "myCategoriesCell"
